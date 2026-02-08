@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="MobileApp1.ButtonNavbar"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <ContentView.Resources>
+        <Style x:Key="NavBorderStyle" TargetType="Border">
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="Padding" Value="10" />
+            <Setter Property="HeightRequest" Value="90" />
+            <Setter Property="Stroke" Value="Transparent" />
+            <Setter Property="StrokeShape" Value="RoundRectangle 25" />
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup Name="SelectionStates">
+                        <VisualState Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="Transparent" />
+                                <Setter Property="Scale" Value="1" />
+                                <Setter Property="Stroke" Value="Transparent" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="#e6ecf7" />
+                                <Setter Property="Scale" Value="1.2" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+        <Style x:Key="NavIconLabel" TargetType="Label">
+            <Setter Property="HeightRequest" Value="30" />
+            <Setter Property="WidthRequest" Value="30" />
+            <Setter Property="FontFamily" Value="FASolid" />
+            <Setter Property="FontSize" Value="30" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="VerticalOptions" Value="Center" />
+        </Style>
+        <Style x:Key="NavTextLabel" TargetType="Label">
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="TextColor" Value="Black" />
+        </Style>
+    </ContentView.Resources>
+
+    <Grid>
+        <Border
+            x:Name="NavbarBorder"
+            BackgroundColor="White"
+            HeightRequest="80"
+            StrokeThickness="0"
+            VerticalOptions="End">
+            <Grid ColumnDefinitions="*,*,*,*,*">
+
+                <Border
+                    x:Name="HomeNav"
+                    Grid.Column="0"
+                    AutomationId="HomePage"
+                    Style="{StaticResource NavBorderStyle}">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnNavTapped" />
+                    </Border.GestureRecognizers>
+                    <VerticalStackLayout Spacing="5" VerticalOptions="Center">
+                        <Label Style="{StaticResource NavIconLabel}" Text="&#xf015;" />
+                        <Label Style="{StaticResource NavTextLabel}" Text="Home" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border
+                    x:Name="EventsNav"
+                    Grid.Column="1"
+                    AutomationId="EventsPage"
+                    Style="{StaticResource NavBorderStyle}">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnNavTapped" />
+                    </Border.GestureRecognizers>
+                    <VerticalStackLayout Spacing="5" VerticalOptions="Center">
+                        <Label Style="{StaticResource NavIconLabel}" Text="&#xf073;" />
+                        <Label Style="{StaticResource NavTextLabel}" Text="Events" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border
+                    x:Name="LearningNav"
+                    Grid.Column="2"
+                    AutomationId="LearningPage"
+                    Style="{StaticResource NavBorderStyle}">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnNavTapped" />
+                    </Border.GestureRecognizers>
+                    <VerticalStackLayout Spacing="5" VerticalOptions="Center">
+                        <Label Style="{StaticResource NavIconLabel}" Text="&#xf02d;" />
+                        <Label Style="{StaticResource NavTextLabel}" Text="Learning" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border
+                    x:Name="NoticeNav"
+                    Grid.Column="3"
+                    AutomationId="NoticePage"
+                    Style="{StaticResource NavBorderStyle}">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnNavTapped" />
+                    </Border.GestureRecognizers>
+                    <VerticalStackLayout Spacing="5" VerticalOptions="Center">
+                        <Label Style="{StaticResource NavIconLabel}" Text="&#xf0e0;" />
+                        <Label Style="{StaticResource NavTextLabel}" Text="Notice" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border
+                    x:Name="ProfileNav"
+                    Grid.Column="4"
+                    AutomationId="ProfilePage"
+                    Style="{StaticResource NavBorderStyle}">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnNavTapped" />
+                    </Border.GestureRecognizers>
+                    <VerticalStackLayout Spacing="5" VerticalOptions="Center">
+                        <Label Style="{StaticResource NavIconLabel}" Text="&#xf007;" />
+                        <Label Style="{StaticResource NavTextLabel}" Text="Profile" />
+                    </VerticalStackLayout>
+                </Border>
+
+            </Grid>
+        </Border>
+    </Grid>
+</ContentView>

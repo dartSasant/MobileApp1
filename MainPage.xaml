@@ -1,0 +1,58 @@
+﻿<ContentPage
+    x:Class="MobileApp1.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <ContentPage.Resources>
+
+        <Style x:Key="StyleForEntry" TargetType="Entry">
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+            <Setter Property="PlaceholderColor" Value="Gray"/>
+        </Style>
+
+        <Style x:Key="StyleForBorder" TargetType="Border">
+            <Setter Property="Stroke" Value="#2B3CDE"/>
+            <Setter Property="StrokeShape" Value="RoundRectangle 12"/>
+            <Setter Property="StrokeThickness" Value="2"/>
+            <Setter Property="Padding" Value="12,6"/>
+            <Setter Property="Margin" Value="0,10"/>
+        </Style>
+
+    </ContentPage.Resources>
+
+    <Grid>
+        <VerticalStackLayout
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Spacing="15"
+            WidthRequest="280">
+
+            <Border Style="{StaticResource StyleForBorder}">
+                <Entry
+                    BackgroundColor="Transparent"
+                    Style="{StaticResource StyleForEntry}"
+                    Placeholder="Username"
+                    Text="{Binding Username}" />
+            </Border>
+
+            <Border Style="{StaticResource StyleForBorder}">
+                <Entry
+                    BackgroundColor="Transparent"
+                    Style="{StaticResource StyleForEntry}"
+                    Placeholder="Password"
+                    IsPassword="True" />
+            </Border>
+
+            <Button
+                Text="Login"
+                FontAttributes="Bold"
+                BackgroundColor="#2B3CDE"
+                TextColor="White"
+                CornerRadius="10" 
+                HeightRequest="50"
+                Clicked="OnLoginButtonClicked"/>
+
+        </VerticalStackLayout>
+    </Grid>
+
+</ContentPage>

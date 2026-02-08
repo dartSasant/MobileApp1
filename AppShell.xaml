@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MobileApp1.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MobileApp1"
+    Title="MobileApp1"
+    Shell.BackgroundColor="White">
+
+    <Shell.TitleView>
+        <Grid Padding="-18,20,0,0">
+            <Image
+                HeightRequest="60"
+                HorizontalOptions="Start"
+                Source="texas_logo.png"
+                WidthRequest="180" />
+        </Grid>
+    </Shell.TitleView>
+
+    <ShellContent 
+        Title="Login"
+        ContentTemplate="{DataTemplate local:MainPage}" 
+        Route="MainPage" />
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:HomePage}"
+        Route="HomePage" />
+
+</Shell>
