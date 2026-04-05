@@ -11,6 +11,7 @@
             Routing.RegisterRoute(nameof(ProfilePage), typeof(ProfilePage));
             Routing.RegisterRoute(nameof(HomePage), typeof(HomePage));
             Routing.RegisterRoute(nameof(AttendancePage), typeof(AttendancePage));
+            Routing.RegisterRoute(nameof(ResultsPage), typeof(ResultsPage));
 
         }
     }

@@ -10,6 +10,10 @@ public partial class HomePage : ContentPage
 
 	}
 
+    private async void OnResultsTapped(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync(nameof(ResultsPage));
+    }
 
     private async void OnAttendanceTapped(object sender, EventArgs e)
     {

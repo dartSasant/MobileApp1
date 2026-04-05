@@ -1,0 +1,12 @@
+<ContentPage
+    x:Class="MobileApp1.ResultsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Results">
+    <Grid>
+        <WebView
+            HorizontalOptions="Fill"
+            Source="https://collaboration.lincolnedu.education/welcome.aspx"
+            VerticalOptions="Fill" />
+    </Grid>
+</ContentPage>

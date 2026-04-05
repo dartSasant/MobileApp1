@@ -47,6 +47,9 @@
                         Grid.Row="0"
                         Grid.Column="1"
                         Stroke="Transparent">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnResultsTapped" />
+                        </Border.GestureRecognizers>
                         <VerticalStackLayout
                             HorizontalOptions="Center"
                             Spacing="5"
