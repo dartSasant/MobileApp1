@@ -36,13 +36,13 @@
             <Setter Property="HeightRequest" Value="30" />
             <Setter Property="WidthRequest" Value="30" />
             <Setter Property="FontFamily" Value="FASolid" />
-            <Setter Property="FontSize" Value="30" />
+            <Setter Property="FontSize" Value="25" />
             <Setter Property="HorizontalOptions" Value="Center" />
             <Setter Property="TextColor" Value="Black" />
             <Setter Property="VerticalOptions" Value="Center" />
         </Style>
         <Style x:Key="NavTextLabel" TargetType="Label">
-            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontSize" Value="13" />
             <Setter Property="HorizontalOptions" Value="Center" />
             <Setter Property="TextColor" Value="Black" />
         </Style>

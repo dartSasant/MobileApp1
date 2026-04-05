@@ -1,3 +1,5 @@
 <Solution>
-  <Project Path="MobileApp1.csproj" />
+  <Project Path="MobileApp1.csproj">
+    <Deploy Solution="Debug|*" />
+  </Project>
 </Solution>

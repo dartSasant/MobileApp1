@@ -10,6 +10,7 @@
             Routing.RegisterRoute(nameof(NoticePage), typeof(NoticePage));
             Routing.RegisterRoute(nameof(ProfilePage), typeof(ProfilePage));
             Routing.RegisterRoute(nameof(HomePage), typeof(HomePage));
+            Routing.RegisterRoute(nameof(AttendancePage), typeof(AttendancePage));
 
         }
     }

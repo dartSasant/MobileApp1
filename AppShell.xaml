@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MobileApp1"
     Title="MobileApp1"
-    Shell.BackgroundColor="White">
+    Shell.BackgroundColor="GhostWhite">
 
     <Shell.TitleView>
         <Grid Padding="-18,20,0,0">
@@ -17,14 +17,32 @@
         </Grid>
     </Shell.TitleView>
 
-    <ShellContent 
+    <ShellContent
         Title="Login"
-        ContentTemplate="{DataTemplate local:MainPage}" 
+        ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:HomePage}"
         Route="HomePage" />
+
+    <ShellContent
+        Title="Events"
+        ContentTemplate="{DataTemplate local:EventsPage}"
+        Route="EventsPage" />
+
+    <ShellContent
+        Title="Learning"
+        ContentTemplate="{DataTemplate local:LearningPage}"
+        Route="LearningPage" />
+    <ShellContent
+        Title="Profile"
+        ContentTemplate="{DataTemplate local:ProfilePage}"
+        Route="ProfilePage" />
+    <ShellContent
+        Title="Notice"
+        ContentTemplate="{DataTemplate local:NoticePage}"
+        Route="NoticePage" />
 
 </Shell>

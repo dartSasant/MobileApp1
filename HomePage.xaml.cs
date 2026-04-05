@@ -2,8 +2,18 @@ namespace MobileApp1;
 
 public partial class HomePage : ContentPage
 {
+
 	public HomePage()
 	{
 		InitializeComponent();
+
+
 	}
+
+
+    private async void OnAttendanceTapped(object sender, EventArgs e)
+    {
+        // This looks for the route you registered in AppShell
+        await Shell.Current.GoToAsync(nameof(AttendancePage));
+    }
 }

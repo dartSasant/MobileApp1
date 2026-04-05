@@ -5,198 +5,202 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MobileApp1">
 
-    <Style x:Key="NavIconLabel" TargetType="Label">
-        <Setter Property="FontSize" Value="30" />
-        <Setter Property="FontFamily" Value="FASolid" />
-        <Setter Property="HorizontalOptions" Value="Center" />
-    </Style>
+
     <Grid RowDefinitions="Auto,*,Auto">
-        <ScrollView Grid.Row="0">
-            <Grid
-                x:Name="Icons_Grid"
-                ColumnDefinitions="*,*,*"
-                ColumnSpacing="20"
-                MinimumHeightRequest="400"
-                RowDefinitions="*,*,*"
-                RowSpacing="20">
+        <Grid Grid.Row="0">
+            <ScrollView
+                x:Name="MainDashboard"
+                Grid.Row="0"
+                IsVisible="True">
+                <Grid
+                    x:Name="Icons_Grid"
+                    ColumnDefinitions="*,*,*"
+                    ColumnSpacing="15"
+                    MinimumHeightRequest="400"
+                    RowDefinitions="*,*,*"
+                    RowSpacing="10">
 
-                <Border
-                    Grid.Row="0"
-                    Grid.Column="0"
-                    Stroke="Transparent"
-                    StrokeShape="RoundRectangle 15">
+                    <Border
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Stroke="Transparent"
+                        StrokeShape="RoundRectangle 15">
 
-                    <VerticalStackLayout
-                        HorizontalOptions="Center"
-                        Spacing="5"
-                        VerticalOptions="Center">
-                        <Image
-                            HeightRequest="60"
-                            Source="alarm_clock.png"
-                            WidthRequest="60" />
-                        <Label
-                            FontFamily="FASolid"
-                            FontSize="14"
+                        <VerticalStackLayout
                             HorizontalOptions="Center"
-                            Text="Routine"
-                            VerticalOptions="Center" />
-                    </VerticalStackLayout>
+                            Spacing="5"
+                            VerticalOptions="Center">
+                            <Image
+                                HeightRequest="60"
+                                Source="alarm_clock.png"
+                                WidthRequest="60" />
+                            <Label
+                                FontFamily="FASolid"
+                                FontSize="13"
+                                HorizontalOptions="Center"
+                                Text="Routine"
+                                VerticalOptions="Center" />
+                        </VerticalStackLayout>
 
-                </Border>
-                <Border
-                    Grid.Row="0"
-                    Grid.Column="1"
-                    Stroke="Transparent">
-                    <VerticalStackLayout
-                        HorizontalOptions="Center"
-                        Spacing="5"
-                        VerticalOptions="Center">
-                        <Image
-                            HeightRequest="60"
-                            Source="exam.png"
-                            WidthRequest="60" />
-                        <Label
-                            FontFamily="FASolid"
-                            FontSize="14"
+                    </Border>
+                    <Border
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Stroke="Transparent">
+                        <VerticalStackLayout
                             HorizontalOptions="Center"
-                            Text="Results"
-                            VerticalOptions="Center" />
-                    </VerticalStackLayout>
+                            Spacing="5"
+                            VerticalOptions="Center">
+                            <Image
+                                HeightRequest="60"
+                                Source="exam.png"
+                                WidthRequest="60" />
+                            <Label
+                                FontFamily="FASolid"
+                                FontSize="13"
+                                HorizontalOptions="Center"
+                                Text="Results"
+                                VerticalOptions="Center" />
+                        </VerticalStackLayout>
 
-                </Border>
-                <Border
-                    Grid.Row="0"
-                    Grid.Column="2"
-                    Stroke="Transparent">
-                    <VerticalStackLayout
-                        HorizontalOptions="Center"
-                        Spacing="5"
-                        VerticalOptions="Center">
-                        <Image
-                            HeightRequest="60"
-                            Source="attendence.png"
-                            WidthRequest="60" />
-                        <Label
-                            FontFamily="FASolid"
-                            FontSize="14"
+                    </Border>
+                    <Border
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        Stroke="Transparent">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnAttendanceTapped" />
+                        </Border.GestureRecognizers>
+                        <VerticalStackLayout
                             HorizontalOptions="Center"
-                            Text="A/ttendence"
-                            VerticalOptions="Center" />
-                    </VerticalStackLayout>
-                </Border>
-                <Border
-                    Grid.Row="1"
-                    Grid.Column="0"
-                    Stroke="Transparent">
-                    <VerticalStackLayout
-                        HorizontalOptions="Center"
-                        Spacing="5"
-                        VerticalOptions="Center">
-                        <Image
-                            HeightRequest="60"
-                            Source="paper_plane.png"
-                            WidthRequest="60" />
-                        <Label
-                            FontFamily="FASolid"
-                            FontSize="14"
+                            Spacing="5"
+                            VerticalOptions="Center">
+                            <Image
+                                HeightRequest="60"
+                                Source="attendence.png"
+                                WidthRequest="60" />
+                            <Label
+                                FontFamily="FASolid"
+                                FontSize="13"
+                                HorizontalOptions="Center"
+                                Text="A/ttendence"
+                                VerticalOptions="Center" />
+                        </VerticalStackLayout>
+                    </Border>
+                    <Border
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Stroke="Transparent">
+                        <VerticalStackLayout
                             HorizontalOptions="Center"
-                            Text="Requests"
-                            VerticalOptions="Center" />
-                    </VerticalStackLayout>
-                </Border>
-                <Border
-                    Grid.Row="1"
-                    Grid.Column="1"
-                    Stroke="Transparent">
-                    <VerticalStackLayout
-                        HorizontalOptions="Center"
-                        Spacing="5"
-                        VerticalOptions="Center">
-                        <Image
-                            HeightRequest="60"
-                            Source="jobs.png"
-                            WidthRequest="60" />
-                        <Label
-                            FontFamily="FASolid"
-                            FontSize="14"
+                            Spacing="5"
+                            VerticalOptions="Center">
+                            <Image
+                                HeightRequest="60"
+                                Source="paper_plane.png"
+                                WidthRequest="60" />
+                            <Label
+                                FontFamily="FASolid"
+                                FontSize="13"
+                                HorizontalOptions="Center"
+                                Text="Requests"
+                                VerticalOptions="Center" />
+                        </VerticalStackLayout>
+                    </Border>
+                    <Border
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Stroke="Transparent">
+                        <VerticalStackLayout
                             HorizontalOptions="Center"
-                            Text="Jobs"
-                            VerticalOptions="Center" />
-                    </VerticalStackLayout>
-                </Border>
-                <Border
-                    Grid.Row="1"
-                    Grid.Column="2"
-                    Stroke="Transparent">
-                    <VerticalStackLayout
-                        HorizontalOptions="Center"
-                        Spacing="5"
-                        VerticalOptions="Center">
-                        <Image
-                            HeightRequest="60"
-                            Source="achievements.png"
-                            WidthRequest="60" />
-                        <Label
-                            FontFamily="FASolid"
-                            FontSize="14"
+                            Spacing="5"
+                            VerticalOptions="Center">
+                            <Image
+                                HeightRequest="60"
+                                Source="jobs.png"
+                                WidthRequest="60" />
+                            <Label
+                                FontFamily="FASolid"
+                                FontSize="13"
+                                HorizontalOptions="Center"
+                                Text="Jobs"
+                                VerticalOptions="Center" />
+                        </VerticalStackLayout>
+                    </Border>
+                    <Border
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        Stroke="Transparent">
+                        <VerticalStackLayout
                             HorizontalOptions="Center"
-                            Text="Achievements"
-                            VerticalOptions="Center" />
-                    </VerticalStackLayout>
-                </Border>
-                <Border
-                    Grid.Row="2"
-                    Grid.Column="0"
-                    Stroke="Transparent">
-                    <VerticalStackLayout>
-                        <Image
-                            HeightRequest="60"
-                            Source="library.png"
-                            WidthRequest="60" />
-                        <Label
-                            FontFamily="FASolid"
-                            FontSize="14"
-                            HorizontalOptions="Center"
-                            Text="Library"
-                            VerticalOptions="Center" />
-                    </VerticalStackLayout>
-                </Border>
-                <Border
-                    Grid.Row="2"
-                    Grid.Column="1"
-                    Stroke="Transparent">
-                    <VerticalStackLayout>
-                        <Image
-                            HeightRequest="60"
-                            Source="id_card.png"
-                            WidthRequest="60" />
-                        <Label
-                            FontFamily="FASolid"
-                            FontSize="14"
-                            HorizontalOptions="Center"
-                            Text="ID Ca/rd"
-                            VerticalOptions="Center" />
-                    </VerticalStackLayout>
-                </Border>
-                <Border
-                    Grid.Row="2"
-                    Grid.Column="2"
-                    Stroke="Transparent">
-                    <VerticalStackLayout>
-                        <Image
-                            HeightRequest="60"
-                            Source="fees.png"
-                            WidthRequest="60" />
-                        <Label
-                            FontFamily="FASolid"
-                            FontSize="14"
-                            HorizontalOptions="Center"
-                            Text="Fees"
-                            VerticalOptions="Center" />
-                    </VerticalStackLayout>
-                </Border>
-            </Grid>
-        </ScrollView>
+                            Spacing="5"
+                            VerticalOptions="Center">
+                            <Image
+                                HeightRequest="60"
+                                Source="achievements.png"
+                                WidthRequest="60" />
+                            <Label
+                                FontFamily="FASolid"
+                                FontSize="13"
+                                HorizontalOptions="Center"
+                                Text="Achievements"
+                                VerticalOptions="Center" />
+                        </VerticalStackLayout>
+                    </Border>
+                    <Border
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Stroke="Transparent">
+                        <VerticalStackLayout>
+                            <Image
+                                HeightRequest="60"
+                                Source="library.png"
+                                WidthRequest="60" />
+                            <Label
+                                FontFamily="FASolid"
+                                FontSize="13"
+                                HorizontalOptions="Center"
+                                Text="Library"
+                                VerticalOptions="Center" />
+                        </VerticalStackLayout>
+                    </Border>
+                    <Border
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Stroke="Transparent">
+                        <VerticalStackLayout>
+                            <Image
+                                HeightRequest="60"
+                                Source="id_card.png"
+                                WidthRequest="60" />
+                            <Label
+                                FontFamily="FASolid"
+                                FontSize="13"
+                                HorizontalOptions="Center"
+                                Text="ID Ca/rd"
+                                VerticalOptions="Center" />
+                        </VerticalStackLayout>
+                    </Border>
+                    <Border
+                        Grid.Row="2"
+                        Grid.Column="2"
+                        Stroke="Transparent">
+                        <VerticalStackLayout>
+                            <Image
+                                HeightRequest="60"
+                                Source="fees.png"
+                                WidthRequest="60" />
+                            <Label
+                                FontFamily="FASolid"
+                                FontSize="13"
+                                HorizontalOptions="Center"
+                                Text="Fees"
+                                VerticalOptions="Center" />
+                        </VerticalStackLayout>
+                    </Border>
+                </Grid>
+            </ScrollView>
+        </Grid>
         <local:ButtonNavbar Grid.Row="2" />
     </Grid>
 </ContentPage>
