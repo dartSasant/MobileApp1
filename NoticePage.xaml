@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:MobileApp1"
-             x:Class="MobileApp1.NoticePage"
-             Title="NoticePage">
-    <Grid RowDefinitions="*,Auto">
-        <Grid Grid.Row="0">
-            <Label 
-                Text="I am profile page"
-                VerticalOptions="Center" 
-                HorizontalOptions="Center" />
-        </Grid>
+<ContentPage
+    x:Class="MobileApp1.NoticePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MobileApp1"
+    Title="Notice Board">
+
+    <Grid RowDefinitions="*, Auto">
+
+        <WebView
+            Grid.Row="0"
+            HorizontalOptions="Fill"
+            Source="https://note-keeping-1f75.onrender.com/"
+            VerticalOptions="Fill" />
 
         <local:ButtonNavbar Grid.Row="1" />
     </Grid>
