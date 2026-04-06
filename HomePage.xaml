@@ -134,6 +134,9 @@
                         Grid.Row="1"
                         Grid.Column="2"
                         Stroke="Transparent">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnAchievementsTapped" />
+                        </Border.GestureRecognizers>
                         <VerticalStackLayout
                             HorizontalOptions="Center"
                             Spacing="5"

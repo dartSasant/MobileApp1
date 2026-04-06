@@ -20,4 +20,9 @@ public partial class HomePage : ContentPage
         // This looks for the route you registered in AppShell
         await Shell.Current.GoToAsync(nameof(AttendancePage));
     }
+
+    private async void OnAchievementsTapped(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync(nameof(AchievementsPage));
+    }
 }
